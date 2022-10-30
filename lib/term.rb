@@ -10,10 +10,24 @@ class Term
     courses << course
   end
 
+  def enroll(student, enrolling_course)
+    courses.find do |course|
+      enrolling_course == course
+    end.enroll(student)
+  end
+
   def courses_open
     courses.map do |course|
-        course unless course.full?
-        # require 'pry'; binding.pry
+      course unless course.full?
+      # require 'pry'; binding.pry
+    end.compact
+  end
+
+  def roster
+    courses.flat_map do |course|
+      course.students.map do |student|
+        student.name
+      end
     end
   end
 end
