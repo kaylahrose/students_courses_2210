@@ -15,5 +15,8 @@ class Course
 
   def enroll(student)
     students << student
+    # require 'pry'; binding.pry
+    student.charge
+    
   end
 end
