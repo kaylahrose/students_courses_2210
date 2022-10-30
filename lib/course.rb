@@ -17,6 +17,7 @@ class Course
     students << student
     # require 'pry'; binding.pry
     student.charge
-    
+    # require 'pry'; binding.pry
+    # student.add_class(name)
   end
 end

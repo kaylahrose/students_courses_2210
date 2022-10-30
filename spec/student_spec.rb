@@ -26,4 +26,20 @@ RSpec.describe Student do
     student.charge
     expect(student.account).to eq(1)
   end
+
+  it 'checks scholarship elligibility' do
+    student.log_score(89)
+    student.log_score(78)
+    expect(student.scholarship?).to eq(true)
+
+    student.log_score(0)
+    student.log_score(0)
+    expect(student.scholarship?).to eq(false)
+  end
+
+  it 'pays tuition' do
+    student.charge
+    student.pay
+    expect(student.account).to eq(0)
+  end
 end

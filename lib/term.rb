@@ -1,8 +1,8 @@
 class Term
   attr_reader :name, :courses
 
-  def initialize(season, year)
-    @name = season + ' ' + year.to_s
+  def initialize(name)
+    @name = name
     @courses = []
   end
 
@@ -19,7 +19,6 @@ class Term
   def courses_open
     courses.map do |course|
       course unless course.full?
-      # require 'pry'; binding.pry
     end.compact
   end
 

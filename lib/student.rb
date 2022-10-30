@@ -17,7 +17,14 @@ class Student
   end
 
   def charge
-    # require 'pry'; binding.pry
     @account += 1
+  end
+
+  def scholarship?
+    grade >= 80
+  end
+
+  def pay
+    @account -= 1 if account > 0
   end
 end
